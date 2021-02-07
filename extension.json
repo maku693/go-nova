@@ -4,5 +4,6 @@
   "organization": "maku693",
   "description": "Go language support for Nova",
   "version": "0.1.0",
+  "min_runtime": "4.0",
   "categories": ["languages"]
 }
