@@ -13,11 +13,100 @@
         <symbols type="type" />
         <symbols type="variable,constant,argument" />
         
+        <set>go.statements</set>
         <set>go.keywords</set>
         <set>go.constants</set>
         <set>go.functions</set>
         <set>go.types</set>
     </provider>
+    
+    <set name="go.statements" symbol="statement">
+        <completion string="else">
+            <behavior>
+                <append><![CDATA[ $[cond] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="for">
+            <behavior>
+                <append><![CDATA[ $[cond] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="for">
+            <behavior>
+                <append><![CDATA[ $[init]; $[cond]; $[post] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="for">
+            <behavior>
+                <append><![CDATA[ $[identifiers] := range $[expression] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="func">
+            <behavior>
+                <append><![CDATA[ $[name]($[arg, ...]) ($[results, ...]) {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="import">
+            <behavior>
+                <append><![CDATA[ $[package]]]></append>
+            </behavior>
+        </completion>
+        <completion string="if">
+            <behavior>
+                <append><![CDATA[ $[cond] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="map">
+            <behavior>
+                <append><![CDATA[[$[key]]$[value]]]></append>
+            </behavior>
+        </completion>
+        <completion string="select">
+            <behavior>
+                <append><![CDATA[ $[cond] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="switch">
+            <behavior>
+                <append><![CDATA[ $[cond] {
+	$[statements]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="type">
+            <behavior>
+                <append><![CDATA[ $[identifier]]]></append>
+            </behavior>
+        </completion>
+        <completion string="type">
+            <behavior>
+                <append><![CDATA[ $[identifier] struct {
+	$[fields]
+}]]></append>
+            </behavior>
+        </completion>
+        <completion string="type">
+            <behavior>
+                <append><![CDATA[ $[identifier] interface {
+	$[methods]
+}]]></append>
+            </behavior>
+        </completion>
+    </set>
     
     <set name="go.keywords" symbol="statement">
         <completion string="break" />
@@ -27,23 +116,14 @@
         <completion string="continue" />
         <completion string="default" />
         <completion string="defer" />
-        <completion string="else" />
         <completion string="fallthrough" />
-        <completion string="for" />
-        <completion string="func" />
         <completion string="go" />
         <completion string="goto" />
-        <completion string="if" />
-        <completion string="import" />
         <completion string="interface" />
-        <completion string="map" />
         <completion string="package" />
         <completion string="range" />
         <completion string="return" />
-        <completion string="select" />
         <completion string="struct" />
-        <completion string="switch" />
-        <completion string="type" />
         <completion string="var" />
     </set>
     
