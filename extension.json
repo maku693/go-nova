@@ -1,0 +1,8 @@
+{
+  "identifier": "net.maku693.go",
+  "name": "Go",
+  "organization": "maku693",
+  "description": "Go language support for Nova",
+  "version": "0.1.0",
+  "categories": ["languages"]
+}
