@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<completions>
+    <provider name="go.globals">
+        <syntax>go</syntax>
+        <selector>*:not(string,comment)</selector>
+        <expression>\b[_\p{L}][_\p{L}\p{Nd}]*</expression>
+        
+        <symbols type="function">
+            <behavior>
+                <arguments prefix="(" suffix=")" separator=", " />
+            </behavior>
+        </symbols>
+        <symbols type="type" />
+        <symbols type="variable,constant,argument" />
+        
+        <set>go.keywords</set>
+        <set>go.constants</set>
+        <set>go.functions</set>
+        <set>go.types</set>
+    </provider>
+    
+    <set name="go.keywords" symbol="statement">
+        <completion string="break" />
+        <completion string="case" />
+        <completion string="chan" />
+        <completion string="const" />
+        <completion string="continue" />
+        <completion string="default" />
+        <completion string="defer" />
+        <completion string="else" />
+        <completion string="fallthrough" />
+        <completion string="for" />
+        <completion string="func" />
+        <completion string="go" />
+        <completion string="goto" />
+        <completion string="if" />
+        <completion string="import" />
+        <completion string="interface" />
+        <completion string="map" />
+        <completion string="package" />
+        <completion string="range" />
+        <completion string="return" />
+        <completion string="select" />
+        <completion string="struct" />
+        <completion string="switch" />
+        <completion string="type" />
+        <completion string="var" />
+    </set>
+    
+    <set name="go.constants" symbol="constant">
+        <completion string="nil" />
+        <completion string="iota" />
+        <completion string="true"/>
+        <completion string="false" />
+    </set>
+    
+    <set name="go.functions" symbol="function">
+        <completion string="append" />
+        <completion string="cap" />
+        <completion string="close" />
+        <completion string="complex" />
+        <completion string="copy" />
+        <completion string="delete" />
+        <completion string="imag" />
+        <completion string="len" />
+        <completion string="make" />
+        <completion string="new" />
+        <completion string="panic" />
+        <completion string="print" />
+        <completion string="println" />
+        <completion string="real" />
+        <completion string="recover" />
+    </set>
+    
+    <set name="go.types" symbol="type">
+        <completion string="nil" />
+        <completion string="bool" />
+        <completion string="byte" />
+        <completion string="complex64" />
+        <completion string="complex128" />
+        <completion string="error" />
+        <completion string="float32" />
+        <completion string="float64" />
+        <completion string="int" />
+        <completion string="int8" />
+        <completion string="int16" />
+        <completion string="int32" />
+        <completion string="int64" />
+        <completion string="rune" />
+        <completion string="string" />
+        <completion string="uint" />
+        <completion string="uint8" />
+        <completion string="uint16" />
+        <completion string="uint32" />
+        <completion string="uint64" />
+        <completion string="uintptr" />
+    </set>
+</completions>
