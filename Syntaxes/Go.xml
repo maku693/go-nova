@@ -216,7 +216,7 @@
                         <expression>;</expression>
                     </scope>
                     <scope name="go.definition.type">
-                        <symbol type="type" scope="local" />
+                        <symbol type="type" scope="global" />
                         <starts-with>
                             <expression>\b([_\p{L}][_\p{L}\p{Nd}]*)\b</expression>
                             <capture number="1" name="go.identifier.type.name" />
@@ -248,7 +248,7 @@
                 <subscopes anchored="true">
                     <include syntax="self" collection="comments" optional="true" repeat="true" />
                     <scope name="go.identifier.type">
-                        <symbol type="type" scope="local" />
+                        <symbol type="type" scope="global" />
                         <expression>\b([_\p{L}][_\p{L}\p{Nd}]*)\b</expression>
                         <capture number="1" name="go.identifier.type.name" />
                     </scope>
@@ -373,7 +373,7 @@
             </scope>
             
             <scope name="go.definition.function">
-                <symbol type="function" scope="local">
+                <symbol type="function" scope="global">
                     <display-name>
                         <component selector="go.identifier.function.name" />
                     </display-name>
@@ -462,7 +462,7 @@
         
         <collection name="struct-types">
             <scope name="go.type.struct">
-                <symbol type="struct" scope="local" anonymous="true">
+                <symbol type="struct" scope="global" anonymous="true">
                     <context behavior="subtree" foldable="false" />
                 </symbol>
                 <starts-with>
@@ -501,7 +501,7 @@
         
         <collection name="interface-types">
             <scope name="go.type.interface">
-                <symbol type="interface" scope="local" anonymous="true">
+                <symbol type="interface" scope="global" anonymous="true">
                     <context behavior="subtree" foldable="false" />
                 </symbol>
                 <starts-with>
