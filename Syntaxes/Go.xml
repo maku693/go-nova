@@ -162,7 +162,9 @@
         
         <collection name="definitions">
             <scope name="go.definition.package">
-                <symbol type="package" />
+                <symbol type="package">
+                    <context behavior="start" />
+                </symbol>
                 <expression>\b(package)\s+([_\p{L}][_\p{L}\p{Nd}]*)$</expression>
                 <capture number="1" name="go.keyword" />
                 <capture number="2" name="go.identifier.package.name" />
