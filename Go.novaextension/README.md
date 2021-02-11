@@ -2,6 +2,12 @@
 
 This extension provides syntax highlighting and basic autocompletion for Go.
 
+<figure>
+<img src="icon.png" alt="Extension icon">
+<figcaption>The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
+The design is licensed under the Creative Commons 3.0 Attributions license.</figcaption>
+</figure>
+
 ## Language Support
 
 This extension currently supports syntax highlighting and symbol based code completion of Go source file.
