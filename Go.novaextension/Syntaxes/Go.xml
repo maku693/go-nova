@@ -5,11 +5,11 @@
         <type>compiled</type>
         <preferred-file-extension>go</preferred-file-extension>
     </meta>
-    
+
     <detectors>
         <extension priority="1.0">go</extension>
     </detectors>
-    
+
     <indentation>
         <increase>
             <expression>(\{[^}\"']*$)|(\([^)\"']*$)|case\s+.*:|default:</expression>
@@ -18,7 +18,7 @@
             <expression>^\s*[\}\)\\]|case\s+.*:|default:</expression>
         </decrease>
     </indentation>
-    
+
     <comments>
         <single>
             <expression>//</expression>
@@ -32,13 +32,13 @@
             </ends-with>
         </multiline>
     </comments>
-    
+
     <brackets>
         <pair open="{" close="}" />
         <pair open="[" close="]" />
         <pair open="(" close=")" />
     </brackets>
-    
+
     <surrounding-pairs>
         <pair open="{" close="}" />
         <pair open="[" close="]" />
@@ -47,7 +47,7 @@
         <pair open="&quot;" close="&quot;" />
         <pair open="`" close="`" />
     </surrounding-pairs>
-    
+
     <scopes>
         <include syntax="self" collection="comments" />
         <include syntax="self" collection="blocks" />
@@ -57,7 +57,7 @@
         <include syntax="self" collection="values" />
         <include syntax="self" collection="identifiers" />
     </scopes>
-    
+
     <collections>
         <collection name="comments">
             <scope name="go.comment.single" spell-check="true">
@@ -72,7 +72,7 @@
                 </ends-with>
             </scope>
         </collection>
-        
+
         <collection name="blocks">
             <scope name="go.block">
                 <symbol type="block">
@@ -92,7 +92,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="syntax">
             <scope name="go.expression.type-assertion">
                 <symbol name="expression" />
@@ -103,7 +103,7 @@
                 <capture number="4" name="go.identifier.type" />
                 <capture number="5" name="go.operator" />
             </scope>
-            
+
             <scope name="go.if-statement">
                 <symbol type="statement" scope="private">
                     <context behavior="subtree" foldable="false" />
@@ -120,7 +120,7 @@
                     <include syntax="self"/>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.switch-statement">
                 <symbol type="statement" scope="private">
                     <context behavior="subtree" foldable="false" />
@@ -137,7 +137,7 @@
                     <include syntax="self"/>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.for-statement">
                 <symbol type="statement" scope="private">
                     <context behavior="subtree" foldable="false" />
@@ -154,12 +154,12 @@
                     <include syntax="self"/>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.operator">
                 <expression>(?:(?:\+|-|\*|/|%|&amp;|\||\^|&lt;&lt;|&gt;&gt;|&amp;\^)=?)|&amp;&amp;|\|\||&lt;-|\+\+|--|==|!=|!|&lt;|&gt;|=|:=|\.\.\.|,|;|\.|:|\(|\)|\[|\]|\{|\}</expression>
             </scope>
         </collection>
-        
+
         <collection name="definitions">
             <scope name="go.definition.package">
                 <symbol type="package">
@@ -169,7 +169,7 @@
                 <capture number="1" name="go.keyword" />
                 <capture number="2" name="go.identifier.package.name" />
             </scope>
-            
+
             <scope name="go.definition.import.parenthesized">
                 <starts-with>
                     <expression>\b(import)\s+(\()</expression>
@@ -199,7 +199,7 @@
                     <include syntax="self" collection="import-definitions"/>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.definition.type.parenthesized">
                 <starts-with>
                     <expression>\b(type)\s+(\()</expression>
@@ -236,7 +236,7 @@
                     </scope>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.definition.type">
                 <starts-with>
                     <expression>\b(type)\b</expression>
@@ -259,7 +259,7 @@
                     <include syntax="self" collection="types" />
                 </subscopes>
             </scope>
-            
+
             <scope name="go.definition.constant.parenthesized">
                 <starts-with>
                     <expression>\b(const)\s+(\()</expression>
@@ -314,7 +314,7 @@
                     </scope>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.definition.variable.parenthesized">
                 <starts-with>
                     <expression>\b(var)\s+(\()</expression>
@@ -371,7 +371,7 @@
                     <include syntax="self" collection="types" />
                 </subscopes>
             </scope>
-            
+
             <scope name="go.definition.function">
                 <symbol type="function" scope="global">
                     <display-name>
@@ -419,7 +419,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="import-definitions">
             <include syntax="self" collection="comments"/>
             <include syntax="self" collection="strings"/>
@@ -431,7 +431,7 @@
                 <capture number="1" name="go.identifier.import.alias.name" />
             </scope>
         </collection>
-        
+
         <collection name="types">
             <scope name="go.operator">
                 <expression>\*</expression>
@@ -459,7 +459,7 @@
                 <capture number="3" name="go.identifier.type.name" />
             </scope>
         </collection>
-        
+
         <collection name="struct-types">
             <scope name="go.type.struct">
                 <symbol type="struct" scope="global" anonymous="true">
@@ -498,7 +498,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="interface-types">
             <scope name="go.type.interface">
                 <symbol type="interface" scope="global" anonymous="true">
@@ -549,7 +549,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="function-types">
             <scope name="go.type.function">
                 <starts-with>
@@ -570,7 +570,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="parameters">
             <scope name="go.parameters">
                 <starts-with>
@@ -608,7 +608,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="results">
             <scope name="go.results">
                 <starts-with>
@@ -626,7 +626,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="short-variables">
             <scope name="go.definition.variable.short.blank">
                 <symbol type="variable" scope="private" />
@@ -639,7 +639,7 @@
                 <capture number="1" name="go.identifier.variable.name" />
             </scope>
         </collection>
-        
+
         <collection name="keywords">
             <scope name="go.keyword">
                 <strings>
@@ -671,7 +671,7 @@
                   </strings>
             </scope>
         </collection>
-        
+
         <collection name="values">
             <scope name="go.value.null">
                 <strings>
@@ -679,21 +679,21 @@
                     <string>iota</string>
                 </strings>
             </scope>
-            
+
             <scope name="go.value.boolean">
                 <strings>
                     <string>true</string>
                     <string>false</string>
                 </strings>
             </scope>
-            
+
             <scope name="go.value.number.floating-point.decimal">
                 <expression>(?&lt;!\w)(?:(?:\d(?:_?\d)*\.(?:\d(?:_?\d)*)?(?:[eE][\+-]?\d(?:_?\d)*)?)|(?:\d(?:_?\d)*[eE][+-]?\d(?:_?\d)*)|(?:\.\d(?:_?\d)*(?:[eE][\+-]?\d(?:_?\d)*)?))i?(?!\w)</expression>
             </scope>
             <scope name="go.value.number.floating-point.hex">
                 <expression>\b0[xX]?(?:(?:_?[\da-fA-F](?:_?[\da-fA-F])*\.(?:[\da-fA-F](?:_?[\da-fA-F])*)?)|(?:_?[\da-fA-F](?:_?[\da-fA-F])*)|(?:\.[\da-fA-F](?:_?[\da-fA-F])*))[pP][\+-]?\d(?:_?\d)*i?\b</expression>
             </scope>
-            
+
             <scope name="go.value.number.integer.decimal">
                 <expression>\b\d(?:_?\d(?:_?\d)*)?i?\b</expression>
             </scope>
@@ -706,11 +706,11 @@
             <scope name="go.value.number.integer.binary">
                 <expression>\b0[bB](?:[01]_?[01]+)*i?\b</expression>
             </scope>
-            
+
             <include syntax="self" collection="strings" />
             <include syntax="self" collection="function-literals" />
         </collection>
-        
+
         <collection name="strings">
             <scope name="go.string.rune" atomic="true">
                 <starts-with>
@@ -725,7 +725,7 @@
                     </scope>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.string.interpreted">
                 <starts-with>
                     <expression>&quot;</expression>
@@ -739,7 +739,7 @@
                     </scope>
                 </subscopes>
             </scope>
-            
+
             <scope name="go.string.raw">
                 <starts-with>
                     <expression>`</expression>
@@ -749,7 +749,7 @@
                 </ends-with>
             </scope>
         </collection>
-        
+
         <collection name="function-literals">
             <scope name="go.value.function">
                 <starts-with>
@@ -785,7 +785,7 @@
                 </subscopes>
             </scope>
         </collection>
-        
+
         <collection name="identifiers">
             <scope name="go.identifier.type.predeclared">
                 <strings>
@@ -831,23 +831,23 @@
                     <string>recover</string>
                 </strings>
             </scope>
-            
+
             <include syntax="self" collection="methods" />
             <include syntax="self" collection="functions" />
-            
+
             <scope name="go.identifier">
                 <expression>\b([_\p{L}][_\p{L}\p{Nd}]*)\b</expression>
                 <capture number="1" name="go.identifier.name" />
             </scope>
         </collection>
-        
+
         <collection name="functions">
             <scope name="go.identifier.function">
                 <expression>\b([_\p{L}][_\p{L}\p{Nd}]*)(?=\()</expression>
                 <capture number="1" name="go.identifier.function.name" />
             </scope>
         </collection>
-        
+
         <collection name="methods">
             <scope name="go.identifier.method">
                 <expression>(?&lt;=\.)([_\p{L}][_\p{L}\p{Nd}]*)(?=\()</expression>

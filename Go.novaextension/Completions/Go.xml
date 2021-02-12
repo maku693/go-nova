@@ -4,7 +4,7 @@
         <syntax>go</syntax>
         <selector>*:not(string,comment)</selector>
         <expression>\b[_\p{L}][_\p{L}\p{Nd}]*</expression>
-        
+
         <symbols type="function">
             <behavior>
                 <arguments prefix="(" suffix=")" separator=", " />
@@ -12,14 +12,14 @@
         </symbols>
         <symbols type="type" />
         <symbols type="variable,constant,argument" />
-        
+
         <set>go.statements</set>
         <set>go.keywords</set>
         <set>go.constants</set>
         <set>go.functions</set>
         <set>go.types</set>
     </provider>
-    
+
     <set name="go.statements" symbol="statement">
         <completion string="else">
             <behavior>
@@ -107,7 +107,7 @@
             </behavior>
         </completion>
     </set>
-    
+
     <set name="go.keywords" symbol="statement">
         <completion string="break" />
         <completion string="case" />
@@ -126,14 +126,14 @@
         <completion string="struct" />
         <completion string="var" />
     </set>
-    
+
     <set name="go.constants" symbol="constant">
         <completion string="nil" />
         <completion string="iota" />
         <completion string="true"/>
         <completion string="false" />
     </set>
-    
+
     <set name="go.functions" symbol="function">
         <completion string="append" />
         <completion string="cap" />
@@ -151,7 +151,7 @@
         <completion string="real" />
         <completion string="recover" />
     </set>
-    
+
     <set name="go.types" symbol="type">
         <completion string="nil" />
         <completion string="bool" />
