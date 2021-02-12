@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="gomod">
+	<meta>
+		<name>Go Module File</name>
+		<type>structured</type>
+	</meta>
+	
+	<detectors>
+		<filename priority="1.0">go.mod</filename>
+	</detectors>
+	
+	<indentation>
+		<increase>
+			<expression>\(</expression>
+		</increase>
+		<decrease>
+			<expression>^\s*\)</expression>
+		</decrease>
+	</indentation>
+	
+	<comments>
+		<single>
+			<expression>//</expression>
+		</single>
+	</comments>
+	
+	<brackets>
+		<pair open="(" close=")" />
+	</brackets>
+	
+	<surrounding-pairs>
+		<pair open="(" close=")" />
+	</surrounding-pairs>
+	
+	<scopes>
+		<scope name="gomod.definition.module.parenthesized">
+			<starts-with>
+				<expression>\b(module)\s+(\()</expression>
+				<capture number="1" name="gomod.keyword" />
+				<capture number="2" name="gomod.operator" />
+			</starts-with>
+			<ends-with>
+				<expression>(\))</expression>
+				<capture number="1" name="gomod.operator" />
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		<scope name="gomod.definition.module">
+			<starts-with>
+				<expression>\b(module)\b</expression>
+				<capture number="1" name="gomod.keyword" />
+			</starts-with>
+			<ends-with>
+				<expression>$</expression>
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		
+		<scope name="gomod.definition.go">
+			<starts-with>
+				<expression>\b(go)\b</expression>
+				<capture number="1" name="gomod.keyword" />
+			</starts-with>
+			<ends-with>
+				<expression>$</expression>
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		
+		<scope name="gomod.definition.require.parenthesized">
+			<starts-with>
+				<expression>\b(require)\s+(\()</expression>
+				<capture number="1" name="gomod.keyword" />
+				<capture number="2" name="gomod.operator" />
+			</starts-with>
+			<ends-with>
+				<expression>(\))</expression>
+				<capture number="1" name="gomod.operator" />
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="versions" />
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		<scope name="gomod.definition.require">
+			<starts-with>
+				<expression>\b(require)\b</expression>
+				<capture number="1" name="gomod.keyword" />
+			</starts-with>
+			<ends-with>
+				<expression>$</expression>
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="versions" />
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		
+		<scope name="gomod.definition.exclude.parenthesized">
+			<starts-with>
+				<expression>\b(exclude)\s+(\()</expression>
+				<capture number="1" name="gomod.keyword" />
+				<capture number="2" name="gomod.operator" />
+			</starts-with>
+			<ends-with>
+				<expression>(\))</expression>
+				<capture number="1" name="gomod.operator" />
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="versions" />
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		<scope name="gomod.definition.exclude">
+			<starts-with>
+				<expression>\b(exclude)\b</expression>
+				<capture number="1" name="gomod.keyword" />
+			</starts-with>
+			<ends-with>
+				<expression>$</expression>
+			</ends-with>
+			<subscopes>
+				<include syntax="self" collection="versions" />
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		
+		<scope name="gomod.definition.replace.parenthesized">
+			<starts-with>
+				<expression>\b(replace)\s+(\()</expression>
+				<capture number="1" name="gomod.keyword" />
+				<capture number="2" name="gomod.operator" />
+			</starts-with>
+			<ends-with>
+				<expression>(\))</expression>
+				<capture number="1" name="gomod.operator" />
+			</ends-with>
+			<subscopes>
+				<scope name="gomod.operator">
+					<expression>=&gt;</expression>
+				</scope>
+				<include syntax="self" collection="versions" />
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+		<scope name="gomod.definition.replace">
+			<starts-with>
+				<expression>\b(replace)\b</expression>
+				<capture number="1" name="gomod.keyword" />
+			</starts-with>
+			<ends-with>
+				<expression>$</expression>
+			</ends-with>
+			<subscopes>
+				<scope name="gomod.operator">
+					<expression>=&gt;</expression>
+				</scope>
+				<include syntax="self" collection="versions" />
+				<include syntax="self" collection="strings" />
+				<include syntax="self" collection="identifiers" />
+			</subscopes>
+		</scope>
+	</scopes>
+	
+	<collections>
+		<collection name="strings">
+			<scope name="gomod.string.interpreted">
+				<starts-with>
+					<expression>&quot;</expression>
+				</starts-with>
+				<ends-with>
+					<expression>&quot;|$</expression>
+				</ends-with>
+				<subscopes>
+					<scope name="go.string.interpreted.escape">
+						<expression>\\[abfnrtv\\&apos;&quot;]</expression>
+					</scope>
+				</subscopes>
+			</scope>
+			<scope name="gomod.string.raw">
+				<starts-with>
+					<expression>`</expression>
+				</starts-with>
+				<ends-with>
+					<expression>`</expression>
+				</ends-with>
+			</scope>
+		</collection>
+		
+		<collection name="identifiers">
+			<scope name="gomod.string.identifier">
+				<expression>(?=(?:\.|[^\s]))[^\s]+\b</expression>
+			</scope>
+		</collection>
+		
+		<collection name="versions">
+			<scope name="gomod.version">
+				<expression>\b(v\d+\.\d+\.\d+\(?:-[^\s]+)?(?:-[^\s]+)?)\b</expression>
+				<capture number="1" name="gomod.value.number" />
+			</scope>
+		</collection>
+	</collections>
+</syntax>
