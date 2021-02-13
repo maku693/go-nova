@@ -30,6 +30,8 @@
 
   <surrounding-pairs>
     <pair open="(" close=")" />
+    <pair open="&quot;" close="&quot;" />
+    <pair open="`" close="`" />
   </surrounding-pairs>
 
   <scopes>
