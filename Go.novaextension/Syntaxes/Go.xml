@@ -582,26 +582,12 @@
                     <capture number="0" name="go.operator" />
                 </ends-with>
                 <subscopes>
-                    <scope name="go.parameter.type-only">
-                        <starts-with>
-                            <expression>(?!.*[_\p{L}\p{Nd}]\s+[_\p{L}])</expression>
-                        </starts-with>
-                        <ends-with>
-                            <expression>(?=\)|,)</expression>
-                        </ends-with>
-                        <subscopes>
-                            <scope name="go.operator">
-                                <expression>\.\.\.</expression>
-                            </scope>
-                            <include syntax="self" collection="types" />
-                        </subscopes>
-                    </scope>
                     <scope name="go.operator">
                         <expression>,|\.\.\.</expression>
                     </scope>
                     <scope name="go.identifier.argument">
                         <symbol type="argument" />
-                        <expression>(?&lt;=\(|,|^)\s*([_\p{L}][_\p{L}\p{Nd}]*)\b</expression>
+                        <expression>(?&lt;=\(|,|^)\s*([_\p{L}][_\p{L}\p{Nd}]*)(?=\s+(?=[_\p{L}\.]))</expression>
                         <capture number="1" name="go.identifier.argument.name" />
                     </scope>
                     <include syntax="self" collection="types" />
@@ -615,7 +601,7 @@
                     <expression>(?=\(|\*?[_\p{L}])</expression>
                 </starts-with>
                 <ends-with>
-                    <expression>(?=\{|;|$)</expression>
+                    <expression>(?=\{|,|;|$)</expression>
                 </ends-with>
                 <subscopes>
                     <cut-off>
