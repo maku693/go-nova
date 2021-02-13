@@ -3,7 +3,7 @@
   "name": "Go",
   "organization": "maku693",
   "description": "Go language support for Nova",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "min_runtime": "4.0",
   "categories": ["languages", "completions"],
   "bugs": "https://github.com/maku693/go-nova/issues/new",

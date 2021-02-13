@@ -1,3 +1,7 @@
+## Version 0.3.0
+
+Fix go.mod syntax file to treat `"` and <code>`</code> as surrounding pairs
+
 ## Version 0.2.0
 
 Add syntax file for go.mod
