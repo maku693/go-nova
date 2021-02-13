@@ -601,7 +601,7 @@
                     <expression>(?=\(|\*?[_\p{L}])</expression>
                 </starts-with>
                 <ends-with>
-                    <expression>(?=\{|,|;|$)</expression>
+                    <expression>(?=\{|\)|,|;|$)</expression>
                 </ends-with>
                 <subscopes>
                     <cut-off>
