@@ -1,3 +1,9 @@
 {
-  "extends": ["eslint:recommended", "prettier"]
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["nova"],
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "nova/nova": true
+  }
 }
