@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <completions>
     <provider name="go.globals">
         <syntax>go</syntax>
@@ -37,21 +37,24 @@
         </completion>
         <completion string="for">
             <behavior>
-                <append><![CDATA[ $[init]; $[cond]; $[post] {
+                <append
+        ><![CDATA[ $[init]; $[cond]; $[post] {
 	$[statements]
 }]]></append>
             </behavior>
         </completion>
         <completion string="for">
             <behavior>
-                <append><![CDATA[ $[identifiers] := range $[expression] {
+                <append
+        ><![CDATA[ $[identifiers] := range $[expression] {
 	$[statements]
 }]]></append>
             </behavior>
         </completion>
         <completion string="func">
             <behavior>
-                <append><![CDATA[ $[name]($[arg, ...]) ($[results, ...]) {
+                <append
+        ><![CDATA[ $[name]($[arg, ...]) ($[results, ...]) {
 	$[statements]
 }]]></append>
             </behavior>
@@ -101,7 +104,8 @@
         </completion>
         <completion string="type">
             <behavior>
-                <append><![CDATA[ $[identifier] interface {
+                <append
+        ><![CDATA[ $[identifier] interface {
 	$[methods]
 }]]></append>
             </behavior>
@@ -130,7 +134,7 @@
     <set name="go.constants" symbol="constant">
         <completion string="nil" />
         <completion string="iota" />
-        <completion string="true"/>
+        <completion string="true" />
         <completion string="false" />
     </set>
 
