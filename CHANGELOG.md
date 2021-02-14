@@ -1,0 +1,1 @@
+./Go.novaextension/CHANGELOG.md
