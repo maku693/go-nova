@@ -587,7 +587,7 @@
                     </scope>
                     <scope name="go.identifier.argument">
                         <symbol type="argument" />
-                        <expression>(?&lt;=\(|,|^)\s*([_\p{L}][_\p{L}\p{Nd}]*)(?=\s+(?=[_\p{L}\.]))</expression>
+                        <expression>(?&lt;=\(|,|^)\s*([_\p{L}][_\p{L}\p{Nd}]*)\b(?=[^\)]*(?&lt;=[_\p{L}\p{Nd}])\s+.*(?:\)|,))</expression>
                         <capture number="1" name="go.identifier.argument.name" />
                     </scope>
                     <include syntax="self" collection="types" />
