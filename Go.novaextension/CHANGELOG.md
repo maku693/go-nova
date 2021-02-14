@@ -1,3 +1,7 @@
+## Version 0.3.2
+
+Fix go syntax file to highlight function arguments and results correctly
+
 ## Version 0.3.1
 
 Fix go syntax file to handle function parameters more correctly
