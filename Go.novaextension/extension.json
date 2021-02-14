@@ -6,6 +6,33 @@
   "version": "0.3.4",
   "min_runtime": "4.0",
   "categories": ["languages", "completions"],
+  "main": "main.js",
+  "activationEvents": [
+    "onLanguage:go",
+    "onWorkspaceContains:go.mod",
+    "onWorkspaceContains:go.sum"
+  ],
+  "entitlements": {
+    "process": true
+  },
   "bugs": "https://github.com/maku693/go-nova/issues/new",
-  "repository": "https://github.com/maku693/go-nova"
+  "repository": "https://github.com/maku693/go-nova",
+  "config": [
+    {
+      "key": "go.enable-gopls",
+      "title": "Use Language Server (gopls) (Experimental)",
+      "description": "Whether to enable code completion using gopls.\nYou should have a valid go installation to enable this option.",
+      "type": "boolean",
+      "default": false,
+      "children": [
+        {
+          "key": "go.gopls-path",
+          "title": "gopls path",
+          "description": "Path to gopls executable.\nIf empty, the extension try to infer executable path from $PATH and $GOBIN.",
+          "type": "path",
+          "default": ""
+        }
+      ]
+    }
+  ]
 }
