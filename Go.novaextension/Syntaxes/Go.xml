@@ -584,6 +584,7 @@
                     <capture number="0" name="go.operator" />
                 </ends-with>
                 <subscopes>
+                    <include syntax="self" collection="comments" />
                     <scope name="go.operator">
                         <expression>,|\.\.\.</expression>
                     </scope>
