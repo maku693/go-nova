@@ -37,24 +37,21 @@
         </completion>
         <completion string="for">
             <behavior>
-                <append
-        ><![CDATA[ $[init]; $[cond]; $[post] {
+                <append><![CDATA[ $[init]; $[cond]; $[post] {
 	$[statements]
 }]]></append>
             </behavior>
         </completion>
         <completion string="for">
             <behavior>
-                <append
-        ><![CDATA[ $[identifiers] := range $[expression] {
+                <append><![CDATA[ $[identifiers] := range $[expression] {
 	$[statements]
 }]]></append>
             </behavior>
         </completion>
         <completion string="func">
             <behavior>
-                <append
-        ><![CDATA[ $[name]($[arg, ...]) ($[results, ...]) {
+                <append><![CDATA[ $[name]($[arg, ...]) ($[results, ...]) {
 	$[statements]
 }]]></append>
             </behavior>
@@ -104,8 +101,7 @@
         </completion>
         <completion string="type">
             <behavior>
-                <append
-        ><![CDATA[ $[identifier] interface {
+                <append><![CDATA[ $[identifier] interface {
 	$[methods]
 }]]></append>
             </behavior>

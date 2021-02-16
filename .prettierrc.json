@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "*.xml",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
+}
