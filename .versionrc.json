@@ -1,5 +1,10 @@
 {
+  "infile": "Go.novaextension/CHANGELOG.md",
   "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
     {
       "filename": "Go.novaextension/extension.json",
       "type": "json"
