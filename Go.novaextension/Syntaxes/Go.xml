@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <syntax name="go">
+    <!-- TODO: improve cut-off -->
     <meta>
         <name>Go</name>
         <type>compiled</type>
@@ -491,7 +492,7 @@
                             <include syntax="self" collection="strings" />
                             <scope name="go.identifier.property">
                                 <symbol type="property" scope="private" />
-                                <expression>\b([_\p{L}][_\p{L}\p{Nd}]*)\s*(?=\s?,|\s[_\*\p{L}])</expression>
+                                <expression>\b([_\p{L}][_\p{L}\p{Nd}]*)\s*(?=\s?,|\s[_\*\[\p{L}])</expression>
                                 <capture number="1" name="go.identifier.property.name" />
                             </scope>
                             <include syntax="self" collection="types" />
