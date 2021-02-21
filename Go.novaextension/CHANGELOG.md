@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.4](https://github.com/maku693/go-nova/compare/v0.3.3...v0.3.4) (2021-02-21)
+
+### Bug Fixes
+
+- **go-syntax:** highlight struct field which has slice type ([8c9f132](https://github.com/maku693/go-nova/commit/8c9f132cc180cb8e1fd80930ec79630a04dff5d6))
+
 ### 0.3.3 (2021-02-16)
 
 ### Bug Fixes

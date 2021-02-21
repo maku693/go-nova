@@ -1,6 +1,6 @@
 {
   "name": "go-nova",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Go language support for Nova",
   "repository": "https://github.com/maku693/go-nova.git",
   "author": "maku693 <me@maku693.net>",
