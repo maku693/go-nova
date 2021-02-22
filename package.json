@@ -15,6 +15,8 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@prettier/plugin-xml": "^0.13.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "husky": "^5.0.9",
