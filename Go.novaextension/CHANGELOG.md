@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/maku693/go-nova/compare/v0.3.4...v0.3.5) (2021-07-18)
+
+### Features
+
+- add code completion using gopls ([cffc273](https://github.com/maku693/go-nova/commit/cffc273a38f4448ec9724e67699013705ff70783))
+
 ### [0.3.4](https://github.com/maku693/go-nova/compare/v0.3.3...v0.3.4) (2021-02-21)
 
 ### Bug Fixes

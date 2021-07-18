@@ -3,7 +3,7 @@
   "name": "Go",
   "organization": "maku693",
   "description": "Go language support for Nova",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "min_runtime": "4.0",
   "categories": ["languages", "completions"],
   "main": "main.js",
